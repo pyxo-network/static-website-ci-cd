@@ -1,1 +1,0 @@
-console.log("Website deployed via AWS CodePipeline!");

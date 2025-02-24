@@ -1,16 +1,5 @@
+version: 0.2
 phases:
-  install:
-    commands:
-      - echo "Installing dependencies..."
   build:
     commands:
-      - echo "Building website..."
-  post_build:
-    commands:
-      - echo "Deploying to S3..."
-      - aws s3 sync ./src s3://clearsky-static-website --delete
-      - echo "Deployment successful."
-
-artifacts:
-  files:
-    - "**/*"
+      - aws s3 cp index.html s3://clearsky-static-website/
